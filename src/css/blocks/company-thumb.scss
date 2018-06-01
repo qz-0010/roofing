@@ -1,0 +1,32 @@
+.company-thumb {
+  overflow: hidden;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    border-top: 10px solid #4D4653;
+  }
+
+  &__item {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 20px;
+      top: -10px;
+      opacity: 0;
+      transition: opacity .4s ease;
+      background: #EB5767;
+    }
+    
+    &:hover {
+
+      &:before {
+        opacity: 1;
+      }  
+    }
+  }
+}
