@@ -36,6 +36,8 @@ gulp.task('imgo', function() {
     .pipe(gulp.dest(images));
 });
 
+gulp.task('build', ['csso', 'imgo']);
+
 gulp.task('watch', ['css'], function() {
   return gulp.watch('./src/css/**/*.*', ['css'])
 });

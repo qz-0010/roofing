@@ -1,10 +1,20 @@
 .company-thumb {
+  position: relative;
   overflow: hidden;
 
+  @include media-breakpoint-up(lg) {
+    height: 355px;
+  }
+
+  @include media-breakpoint-down(md) {
+    overflow-x: auto;
+  }
+
   &__list {
-    display: flex;
-    margin: 0;
+    display: inline-flex;
     padding: 0;
+    margin: 0;
+    list-style: none;
     border-top: 10px solid #4D4653;
   }
 
@@ -13,10 +23,12 @@
 
     &:before {
       content: '';
+      visibility: hidden;
       position: absolute;
       width: 100%;
       height: 20px;
       top: -10px;
+      z-index: 1;
       opacity: 0;
       transition: opacity .4s ease;
       background: #EB5767;
@@ -24,9 +36,31 @@
     
     &:hover {
 
+      .company-thumb__img {
+        transform: rotateY(180deg);
+      }
+
       &:before {
+        visibility: visible;
         opacity: 1;
       }  
+    }
+  }
+
+  &__link-wrap {
+    display: block;
+  }
+
+  &__img {
+    transition: transform 1s ease;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .company-thumb {
+    &__img {
+      width: auto;
+      max-height: 250px;
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "fron",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -14,7 +14,7 @@
     "dev": "concurrently -k \"nodemon server.js\" \"gulp\" \"npm run webpack_dev\"",
     "server": "node server.js",
     "webpack_dev": "webpack --watch --progress --mode development",
-    "build": "webpack --mode production"
+    "build": "concurrently -k \"webpack --mode production && gulp build\""
   },
   "dependencies": {
     "autoprefixer": "^8.2.0",
@@ -41,6 +41,7 @@
     "gulp-sass": "^4.0.1",
     "gulp-stylus": "^2.7.0",
     "jquery": "^3.3.1",
+    "magnific-popup": "^1.1.0",
     "plumber": "^0.4.8",
     "popper.js": "^1.14.3",
     "postcss-cssnext": "^3.1.0",

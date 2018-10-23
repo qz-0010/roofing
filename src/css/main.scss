@@ -1,4 +1,44 @@
 @import './bootstrap';
+@import './magnific-popup/main';
+@import './mixins/mixins';
 @import './blocks/nav';
 @import './blocks/company-thumb';
+@import './blocks/soc-l';
+@import './blocks/footer';
+@import './blocks/abc';
 
+
+.wrap {
+  padding-bottom: 6rem;
+  overflow: hidden;
+}
+
+.link {
+  color: #fff;
+  transition: color .2s ease;
+
+  &:hover {
+    color: #eb5368;
+    text-decoration: none;
+  }
+}
+
+.c-title {
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: .125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 1.8rem;
+  }
+
+  &__accent {
+    color: #eb5368;
+
+    // @include media-breakpoint-down(xs) {
+    //   display: block;
+    // }
+  }
+}
